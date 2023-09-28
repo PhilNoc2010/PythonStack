@@ -2,9 +2,16 @@ class Player:
     all_players = []
 
     def __init__(self, player):
-        for k,v in player.items():
-            setattr(self, k, v)
+        self.name = player["name"]
+        self.age = player["age"]
+        self.position = player["position"]
+        self.team = player["team"]
         Player.all_players.append(self)
+
+    # def __init__(self, player):
+    #     for k,v in player.items():
+    #         setattr(self, k, v)
+    #     Player.all_players.append(self)
 
     @classmethod
     def team_roster(cls):

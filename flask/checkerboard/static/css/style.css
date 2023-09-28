@@ -1,0 +1,14 @@
+.litediv, .darkdiv {
+    width:  100px;
+    height: 100px;
+    border: 5px solid black;
+}
+.headline {
+    margin: 5% 35%;
+    padding: 15px;
+    text-align: center;
+}
+.d-flex{
+    display: flex;
+    justify-content: center;
+}
