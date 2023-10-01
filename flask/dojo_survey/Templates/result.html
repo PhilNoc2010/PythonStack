@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Survey Index</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+<div class="survey_results">
+    <h1 class="headline">Dojo Survey Index</h1>
+        <p>Name: {{ session["name"] }}</p>
+        <p>Dojo Location: {{ session["location"] }}</p>
+        <p>Favorite Language: {{ session["language"] }}</p>
+        <p>Preferred Operating System: {{ session["operating_system"] }}</p>
+        <p>Smartphone Platforms:</p>
+        <ul>
+            {% for platform in session['smartphone'] %}
+            <li> {{ platform }}</li>
+            {% endfor %}
+        </ul>
+        <p>Comments: {{ session["comments"] }}</p>
+        <form action="/">
+            <p><button>Go Back</button></p>
+        </form>
+</div>
+</body>
+</html>

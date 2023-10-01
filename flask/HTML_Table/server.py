@@ -2,13 +2,14 @@ from flask import Flask, render_template
 app = Flask(__name__)    # Create a new instance of the Flask class called "app"
 
 @app.route('/')
-@app.route('/<int:x>')
-@app.route('/<int:x>/<int:y>')
-@app.route('/<int:x>/<int:y>/<color0>/<color1>')             # The "@" decorator associates this route with the function immediately following
-def draw_boxes(x=8,y=0, color0="red", color1="black"):
-    if (y == 0):
-        y = x
-    return render_template("index.html",  x=x, y=y, color0=color0, color1=color1)
+def render_student_list():
+    users = [
+    {'first_name' : 'Michael', 'last_name' : 'Choi'},
+    {'first_name' : 'John', 'last_name' : 'Supsupin'},
+    {'first_name' : 'Mark', 'last_name' : 'Guillen'},
+    {'first_name' : 'KB', 'last_name' : 'Tonel'}
+    ]
+    return render_template("index.html",  students = users)
 
 @app.route("/<path:path>")
 def default_route(path):

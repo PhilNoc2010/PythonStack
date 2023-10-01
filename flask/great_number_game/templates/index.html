@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>the Great Ninja Number Game</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<style>
+.large-box {
+    background-color: {{ session['hintcolor']}};
+    color: white;
+}
+.result {
+    visibility: {{ session['resultvisible']}};
+}
+</style>
+<body>
+    <h1>Welcome to the Great Number Game</h1>
+    <h4>I am thinking of a number between 1 to 100</h4>
+    <div class="large-box">
+        <h2>Enter your guess in the box below.</h2>
+        <form action="/reset_game">
+            <button>Play Again</button>
+        </form>
+        <h4>{{ session['status'] }}</h4>
+        <h4 class="result"> you solved this with {{ session['guesscount'] }} guesses.</h4>
+    </div>
+    <div class="small-box">
+        <form action="/check_guess" method="post">
+            <h3>Take a Guess</h3>
+            <input type="text" name="guess" placeholder="Enter a guess here">
+            <button>Guess</button>
+        </form>
+    </div>
+</body>
+</html>

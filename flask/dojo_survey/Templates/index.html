@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Survey</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+<div class="survey_form">
+    <h1 class="headline">Dojo Survey</h1>
+    <form action="/process" method="post" class="">
+        <p><label for="name">Name:</label></p>
+        <p><input type="text" name="name"></p>
+        <p><label for="location">Dojo Location</label></p>
+        <p><select name="location" id="">
+            <option value="San Jose">San Jose</option>
+            <option value="Houston">Houston</option>
+            <option value="Denver">Denver</option>
+            <option value="Chicago">Chicago</option>
+            <option value="Detroit">Detroit</option>
+            <option value="Atlanta">Atlanta</option>
+        </select></p>
+        <p><label for="language">Favorite Language</label></p>
+        <p><select name="language" id="language">
+            <option value="HTML">HTML</option>
+            <option value="CSS">CSS</option>
+            <option value="Javascript">Javascript</option>
+            <option value="Python">Python</option>
+            <option value="Java">Java</option>
+            <option value="C#">C#</option>
+            <option value="COBOL">COBOL</option>
+        </select></p>
+        <p>Which operating system do you prefer to use?</p>
+        <p>
+            <input type="radio" id="Windows" name="operating_system" value="Windows" class="radio">
+            <label for="Windows">Windows</label>
+            <input type="radio" id="MacOS" name="operating_system" value="MacOS" class="radio">
+            <label for="MacOS">MacOS</label>
+            <input type="radio" id="Linux" name="operating_system" value="Linux" class="radio">
+            <label for="Linux">Linux</label>
+        </p>
+        <P>Which smartphone platforms have you used before?</P>
+        <p>
+            <input type="checkbox" id="BlackBerry" name="smartphone" value="BlackBerry" class="radio">
+            <label for="BlackBerry">BlackBerry</label>
+            <input type="checkbox" id="PalmOS" name="smartphone" value="PalmOS" class="radio">
+            <label for="PalmOS">PalmOS</label>
+            <input type="checkbox" id="WindowsPhone" name="smartphone" value="WindowsPhone" class="radio">
+            <label for="WindowsPhone">Windows Phone</label>
+            <input type="checkbox" id="iOS" name="smartphone" value="iOS" class="radio">
+            <label for="iOS">iOS</label>
+            <input type="checkbox" id="Android" name="smartphone" value="Android" class="radio">
+            <label for="Android">Android</label>
+        </p>
+        <p><label for="comments">Comments:</label></p>
+        <p><textarea id="comments" name="comments" rows="6" cols="50">Enter anything else that you'd like us to know about you.  Thanks.</textarea></p>
+        <p><button>Submit</button></p>
+
+    </form>
+</div>
+</body>
+</html>

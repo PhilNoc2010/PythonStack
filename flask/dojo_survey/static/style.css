@@ -1,0 +1,47 @@
+* {
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+}
+h1 {
+    color: orange;
+}
+.survey_form{
+    border: 2px solid black;
+    margin: 5%;
+    background-color: slategrey;
+    padding: 30px;
+    width: 60%;
+}
+.survey_results{
+    border: 2px solid black;
+    margin: 5%;
+    background-color: slategrey;
+    color: white;
+    padding: 30px;
+    width: 60%;
+}
+p{
+    padding: 5px;
+}
+button{
+    padding: 5px;
+    text-align: right;
+}
+input , select{
+    width: 30%;
+    padding: 5px;
+}
+.radio {
+    width: auto;
+    margin: 0 10px;
+}
+textarea {
+    padding: 5px;
+}
+li {
+    list-style: none;
+}
+ul {
+    padding: 5px;
+}
