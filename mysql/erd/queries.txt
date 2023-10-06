@@ -1,0 +1,13 @@
+INSERT INTO users (first_name, last_name, email) VALUES ("Phil", "Nocerini", "pn@email.com") , ("Justin", "Nocerini", "jn@email.com"), ("Dylan", "Nocerini", "dn@email.com");
+
+SELECT * FROM users_schema.users;
+
+SELECT * FROM users_schema.users WHERE email = "pn@email.com";
+
+SELECT * FROM users_schema.users WHERE id = 3;
+
+UPDATE users_schema.users SET last_name = "Pancakes" WHERE id = 3;
+
+DELETE FROM users_schema.users WHERE id=2;
+
+SELECT * FROM users_schema.users ORDER BY last_name DESC;

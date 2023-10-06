@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>the Greatest Games Ever</title>
+</head>
+<body>
+    <h1> These are some of the best games ever made.  You may have others, but these are some of mine</h1>
+    {% for game in all_games %}
+    <p> {{ game.name }}</p>
+    {% endfor %}
+
+</body>
+</html>
