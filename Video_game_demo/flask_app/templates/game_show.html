@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Game Demo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Game Show</h1>
+    <h2> {{ game.name }}</h2>
+    <ul>
+        <li>{{ game.genre }}</li>
+        <li>{{ game.rating }}</li>
+        <li>{{ game.release_year }}</li>
+        <li><a href="/companys/{{ game.company.id}}">{{ game.company.name }}</a></li>
+    </ul>
+    <div>
+        <form action="/games/{{game.id}}/update" method="post">
+            <button>Update this Game</button>
+        </form>
+    </div>
+    <div>
+        <form action="/games/{{game.id}}/delete" method="post">
+            <button>Remove this Game</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Game Demo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Game New</h1>
+    <div>
+        <form action="/games/create" method="post">
+            <div>
+                <label for="name">name</label>
+                <input type="text" name="name" id="name">
+            </div>
+            <div>
+                <label for="genre">genre</label>
+                <input type="text" name="genre" id="genre">
+            </div>
+            <div>
+                <label for="rating">rating</label>
+                <input type="number" name="rating" id="rating">
+            </div>
+            <div>
+                <label for="release_year">release_year</label>
+                <input type="text" min="1974" max="2025" name="release_year" id="release_year">
+            </div>
+            <div>
+                <label for="company_id">company</label>
+                <select name="company_id" id="company_id">
+                    <option hidden>Make a Selection</option>
+                    {% for company in all_companys %}
+                        <option value="{{ company.id }}">{{ company.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div>
+                <button>Add New</button>
+            </div>
+        </form>
+    </div>
+
+
+</body>
+</html>
+
+{% for message in get_flashed_messages(category_filter=['err_table_name_column_name']) %}
+    <p class="err-msg">{{message}}</p>
+    {% endfor %}

@@ -4,12 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>the Greatest Games Ever</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <h1> These are some of the best games ever made.  You may have others, but these are some of mine</h1>
     {% for game in all_games %}
-    <p> {{ game.name }}</p>
+    <p><a href="/games/{{ game.id }}"> {{ game.name }} </a></p>
     {% endfor %}
+
+    <div>
+        <h3><a href="/games/new"> Add to the List</a></h3>
+    </div>
+
+    <h2>These games were made by these companys.</h2>
+    {% for company in all_companys %}
+    <p><a href="/companys/{{ company.id }}"> {{ company.name }} </a></p>
+    {% endfor %}
+    <div>
+        <h3><a href="/companys/new"> Add a company to the List</a></h3>
+    </div>
 
 </body>
 </html>

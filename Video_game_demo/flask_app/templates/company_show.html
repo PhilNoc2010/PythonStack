@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Game Demo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Company Show</h1>
+
+    <h2> {{ company.name }}</h2>
+
+    <div>
+        <form action="/companys/{{company.id}}/update" method="post">
+            <button>Update this Company</button>
+        </form>
+    </div>
+    <div>
+        <form action="/companys/{{company.id}}/delete" method="post">
+            <button>Remove this Company</button>
+        </form>
+    </div>
+</body>
+</html>
