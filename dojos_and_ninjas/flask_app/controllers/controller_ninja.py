@@ -12,7 +12,8 @@ def ninja_new():
 def ninja_create():
     new_ninja = Ninja.add_one(request.form)
     ## stuggling with how to capture the dojo ID and pass it into the re-direct
-    return redirect ('/ninja/<int:id>/show')
+    dojo_id = str(request.form['dojo_id'])
+    return redirect (f'/ninja/{dojo_id}/show')
 
 @app.route('/ninja/<int:id>/show')
 def ninja_show(id):

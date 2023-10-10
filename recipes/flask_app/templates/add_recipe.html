@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit a new recipe</title>
+</head>
+<body>
+    <h2>welcome {{ session.user_email }}</h2>
+    {% with messages = get_flashed_messages %}
+        {% if messages %}
+            {% for message in messages() %}
+                <p> {{ message }} </p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <h3>You may use the form below to submit a new recipe to the database</h3>
+    <form action="/recipe/create" method="post">
+        <div>
+            <label for="title">Recipe Name: </label>
+            <input type="text" id="title" name="title">
+        </div>
+        <div>
+            <label for="description">Description:</label>
+            <textarea name="description" id="description" cols="30" rows="10">Enter a brief description of your recipe here</textarea>
+        </div>
+        <div>
+            <label for="instruction">Instructions:</label>
+            <textarea name="instruction" id="instruction" cols="30" rows="10">Enter the steps and ingrediants here to make your recipe. </textarea>
+        </div>
+        <div>
+            <p>Under 30 minutes?</p>
+            <label for="yes" name="under_30_min" id="yes">Yes</label>
+            <input type="radio" name="under_30_min" id="under_30_min" value=1>
+            <label for="no" name="under_30_min" id="no">No</label>
+            <input type="radio" name="under_30_min" id="under_30_min" value=0 checked>
+        </div>
+        <button>Submit Recipe</button>
+    </form>
+</body>
+</html>

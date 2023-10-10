@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Dashboard</h1>
+
+    <h2>welcome user {{ session.user_email }}</h2>
+
+    <form action="/logout">
+        <button>Logout</button>
+    </form>
+    <a href="/recipe/new">Add Recipe</a>
+
+    <h3>All Posted Recipes.  Find something to make tonight.</h3>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Under 30</th>
+            <th>Posted by</th>
+            <th>Actions</th>
+        </tr>
+        {% for recipe in all_recipes %}
+        <tr>
+            <td>{{ recipe.title }}</td>
+            <td>
+                {% if recipe.under_30_min == 1 %}
+                    {{ "Yes" }}
+                {% else %}
+                    {{ "No" }}
+                {% endif %}
+            </td>
+            <td> {{ recipe.user_instance.first_name }} </td>
+            <td> <a href="/recipe/show/{{ recipe.id }}">Show</a>
+                {% if recipe.user_instance.id == session.user_id %}
+                    | <a href="/recipe/edit/{{ recipe.id }}">Edit</a> | <a href="/recipe/delete/{{ recipe.id }}">Delete</a></td>
+                {% endif %}
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

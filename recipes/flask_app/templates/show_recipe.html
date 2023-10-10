@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe for {{recipe.title}}</title>
+</head>
+<body>
+    <h2>welcome user {{ session.user_email }}</h2>
+    <h3>{{recipe.title}}</h3>
+    <h3> Posted by {{ recipe.user_instance.first_name }}</h3>
+    <div>
+        <h4>Description:</h4>
+        <h4>{{ recipe.description }}</h4>
+        <h4>Under 30 Minutes:</h4>
+        <h4>
+        {% if recipe.under_30_min == 1 %}
+            {{ "Yes" }}
+        {% else %}
+            {{ "No" }}
+        {% endif %}
+        </h4>
+        <h4>Instructions:</h4>
+        <h4>{{ recipe.instruction }}</h4>
+        <h4>Date Submitted</h4>
+        <h4>{{ recipe.updated_at }}</h5>
+    </div>
+    <a href="/logout">Logout</a>
+</body>
+</html>
